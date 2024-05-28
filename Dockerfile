@@ -36,7 +36,7 @@ COPY --chown=myuser package*.json ./
 # tree for debugging
 RUN npm pkg delete scripts.prepare \
     && npm --quiet set progress=false \
-    && npm install --omit=dev --omit=optional \
+    && npm install --include=dev --audit=false \
     && echo "Installed NPM packages:" \
     && (npm list --omit=dev --all || true) \
     && echo "Node.js version:" \
