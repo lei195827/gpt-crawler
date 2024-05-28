@@ -13,7 +13,8 @@ configDotenv();
 
 const app: Express = express();
 const port = Number(process.env.API_PORT) || 3000;
-const hostname = process.env.API_HOST || "localhost";
+// const hostname = process.env.API_HOST || "localhost";
+const hostname = process.env.API_HOST || "0.0.0.0";
 
 app.use(cors());
 app.use(express.json());
